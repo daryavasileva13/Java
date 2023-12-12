@@ -1,52 +1,38 @@
-package PracticeOne;
+package PracticeTwo;
 
 public class Ball {
-    private String type;
-    int goal;
+    private double x = 0.0;
+    private double y = 0.0;
 
-    public Ball(String t, int g){
-        type = t;
-        goal = g;
-    }
-    public Ball(String t){
-        type = t;
-        goal = 0;
+    public Ball(double x, double y){
+        this.x = x;
+        this.y = y;
     }
     public Ball(){
-        type = "баскетбольный";
-        goal = 0;
     }
 
-    public void setType(String type){
-        this.type = type;
+    public double getX(){
+        return x;
     }
-    public void setGoal(int goal){
-        this.goal = goal;
+    public void setX(double x){
+        this.x = x;
     }
-    public String getType(String type){
-        return type;
+    public double getY(){
+        return y;
     }
-    public int getGoal(int goal){
-        return goal;
+    public void setY(double y){
+        this.y = y;
+    }
+    public void setXY(double x, double y){
+        this.x = x;
+        this.y = y;
+    }
+    public void move(double xDisp, double yDisp){
+        x += xDisp;
+        y += yDisp;
     }
 
     public String toString(){
-        return "Тип мяча: " + this.type + "; Количество голов: " + this.goal;
+        return "Ball @ (" + this.x + ", " + this.y + ")";
     }
-
-    public void result(){
-        if (goal == 0){
-            System.out.println("Ты проиграл :(");
-        }
-        else if (goal == 1){
-            System.out.println("Ты молодец!");
-        }
-        else if (goal > 1){
-            System.out.println("Ты нереально крутой!!!");
-        }
-    }
-
-
-
-
 }
